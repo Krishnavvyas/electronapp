@@ -7,13 +7,22 @@
     "remote": "^0.2.6"
   },
   "name": "demo-app",
+  "build": {
+    "appId": "com.example.ElectronUpdate"
+  },
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder build --mac --win --publish never",
+    "deploy": "electron-builder build --mac --win --publish always"
   },
   "author": "krishna",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Krishnavvyas/electronapp.git"
+  }
 }
