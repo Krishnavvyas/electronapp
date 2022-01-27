@@ -2,8 +2,7 @@
   "dependencies": {
     "@electron/remote": "^2.0.1",
     "auto-updater": "^1.0.2",
-    "electron": "^16.0.7",
-    "electron-builder": "^22.14.5",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.6.1",
     "remote": "^0.2.6"
   },
@@ -14,10 +13,12 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build --win --publish always"
+    "deploy": "electron-builder build --win --publish always",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "krishna",
   "license": "ISC",
@@ -25,5 +26,40 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Krishnavvyas/electronapp.git"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^16.0.7"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "demo_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }
