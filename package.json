@@ -3,6 +3,7 @@
     "@electron/remote": "^2.0.1",
     "auto-updater": "^1.0.2",
     "electron": "^16.0.7",
+    "electron-builder": "^22.14.5",
     "electron-updater": "^4.6.1",
     "remote": "^0.2.6"
   },
@@ -22,7 +23,7 @@
   "license": "ISC",
   "description": "",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Krishnavvyas/electronapp.git"
+    "type": "git",
+    "url": "https://github.com/Krishnavvyas/electronapp.git"
   }
 }
